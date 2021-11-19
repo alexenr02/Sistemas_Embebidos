@@ -23,6 +23,20 @@ class RTC:
   def get(self):
     return bus.read_i2c_block_data(self.__address, 0, 3)
 
+class TC74:
+# Register addresses
+reg_temp = 0x00
+reg_config = 0x01
+ __address =  0x4D
+ 
+def temp():
+    temp = bus.read_byte(address,0)
+    return temp
+
+while True:
+    print(temp())
+    time.sleep(1)
+ 
 class LCD:
 
   # commands
